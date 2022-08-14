@@ -1,0 +1,32 @@
+#map {
+  height: 50vh;
+  width: 50vh;
+
+  margin: 10% auto;
+}
+
+.parent {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f00;
+  color: #fff;
+  font-size: larger;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.parent::after {
+  content: "test";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #00f;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

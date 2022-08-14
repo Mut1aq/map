@@ -1,0 +1,13 @@
+<p>layer-opacity works!</p>
+<div *ngFor="let layer of layers; let i = index">
+  <button (click)="onChangeLayerState(i)">Change</button>
+  <input
+    [hidden]="layer[i]"
+    type="range"
+    min="0"
+    max="100"
+    value="50"
+    (change)="onChangeOpacity(i, $event.target.value)"
+  />
+  {{ i }}
+</div>
