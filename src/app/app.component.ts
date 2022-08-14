@@ -40,16 +40,33 @@ export class AppComponent implements OnInit {
       [37.0902, 95.7129]
     ];
 
+    const polygonPoints = [
+      [37.786617, -122.404654],
+      [37.797843, -122.407057],
+      [37.798962, -122.398260],
+      [37.794299, -122.395234]
+    ];
+    const polygonPoints2 = [
+      [21.754398, 48.613981],
+      [47.853717, 7.805501],
+      [42.920229, 63.037668],
+
+    ];
+
 
 
     const polygon = L.polygon(latlngs as any, { color: 'purple', opacity: 1 })
     const polygon2 = L.polygon(latlngs2 as any, { color: 'purple', opacity: 1 })
-    const layers = [polygon, polygon2]
+    const polygon3 = L.polygon(polygonPoints as any, { color: 'purple', opacity: 1 })
+    const polygon4 = L.polygon(polygonPoints2 as any, { color: 'purple', opacity: 1 })
+    const layers = [polygon, polygon2, polygon3, polygon4]
     const featureGroup = L.featureGroup(layers);
     featureGroup.addTo(this.map);
 
     this.mapService.setLayers(polygon)
     this.mapService.setLayers(polygon2)
+    this.mapService.setLayers(polygon3)
+    this.mapService.setLayers(polygon4)
 
   }
 
